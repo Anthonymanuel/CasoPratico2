@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.ActorController",
+    "Method": "GetActors",
+    "RelativePath": "api/Actor/GetActors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

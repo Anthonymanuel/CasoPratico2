@@ -1,0 +1,12 @@
+F:\CasoPratico2Models\bin\Debug\net7.0\CasoPratico2Models.deps.json
+F:\CasoPratico2Models\bin\Debug\net7.0\CasoPratico2Models.dll
+F:\CasoPratico2Models\bin\Debug\net7.0\CasoPratico2Models.pdb
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.AssemblyInfoInputs.cache
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.AssemblyInfo.cs
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.csproj.CoreCompileInputs.cache
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.dll
+F:\CasoPratico2Models\obj\Debug\net7.0\refint\CasoPratico2Models.dll
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.pdb
+F:\CasoPratico2Models\obj\Debug\net7.0\ref\CasoPratico2Models.dll
+F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.csproj.AssemblyReference.cache
