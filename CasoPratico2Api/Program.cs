@@ -1,3 +1,4 @@
+using CasoPratico2Data;
 
 namespace CasoPratico2Api
 {
@@ -13,7 +14,8 @@ namespace CasoPratico2Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            
+            builder.Services.AddRepositories();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
