@@ -6,6 +6,5 @@ namespace CasoPratico2Models.Models;
 public class Country : ClaseBase
 {
     public int CountryId { get; set; } 
-
     public string Name { get; set; } = string.Empty;
 }

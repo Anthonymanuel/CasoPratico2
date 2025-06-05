@@ -10,6 +10,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddTransient<SakilaContext>();
+        services.AddTransient<IActorRepository, ActorRepository>();
         services.AddTransient<ICityRepository, CityRepository>();
         services.AddTransient<ICountryRepository, CountryRepository>();
         services.AddTransient<ILanguageRepository, LanguageRepository>();

@@ -14,6 +14,8 @@ public class SakilaContext : DbContext
         _configuration = configuration;
         _connectionString = _configuration.GetConnectionString("default");
     }
+
+    public DbSet<Actor> Actor { get; set; }
     public DbSet<City> City { get; set; }
     public DbSet<Country> Country { get; set; }
     public DbSet<Language> Language { get; set; }
@@ -25,6 +27,24 @@ public class SakilaContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<Actor>(entity =>
+        {
+            entity.ToTable("actor");
+
+            entity.HasKey(e => e.ActorId);
+
+            entity.Property(e => e.ActorId)
+                  .HasColumnName("actor_id");
+
+            entity.Property(e => e.FirstName)
+                  .HasColumnName("first_name")
+                  .HasMaxLength(45);
+
+            entity.Property(e => e.LastName)
+                  .HasColumnName("last_name")
+                  .HasMaxLength(45);
+        });
 
         modelBuilder.Entity<City>(entity =>
         {
