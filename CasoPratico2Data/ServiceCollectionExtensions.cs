@@ -11,6 +11,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddTransient<SakilaContext>();
         services.AddTransient<IActorRepository, ActorRepository>();
+        services.AddTransient<IAddressRepository, AddressRepository>();
         services.AddTransient<ICityRepository, CityRepository>();
         services.AddTransient<ICountryRepository, CountryRepository>();
         services.AddTransient<ILanguageRepository, LanguageRepository>();

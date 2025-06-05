@@ -16,6 +16,7 @@ public class SakilaContext : DbContext
     }
 
     public DbSet<Actor> Actor { get; set; }
+    public DbSet<Address> Address { get; set; }
     public DbSet<City> City { get; set; }
     public DbSet<Country> Country { get; set; }
     public DbSet<Language> Language { get; set; }
@@ -23,14 +24,17 @@ public class SakilaContext : DbContext
 
     override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseMySQL(_connectionString);
+        optionsBuilder.UseMySql(
+        _connectionString,
+        ServerVersion.AutoDetect(_connectionString),
+        mySqlOptions => mySqlOptions.UseNetTopologySuite()
+    );
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
         modelBuilder.Entity<Actor>(entity =>
         {
-            entity.ToTable("actor");
 
             entity.HasKey(e => e.ActorId);
 
@@ -44,6 +48,48 @@ public class SakilaContext : DbContext
             entity.Property(e => e.LastName)
                   .HasColumnName("last_name")
                   .HasMaxLength(45);
+        });
+
+        modelBuilder.Entity<Address>(entity =>
+        {
+            entity.HasKey(e => e.AddressId);
+
+            entity.Property(e => e.AddressId)
+                .HasColumnName("address_id");
+
+            entity.Property(e => e.AddressLine1)
+                .IsRequired()
+                .HasMaxLength(50)
+                .HasColumnName("address");
+
+            entity.Property(e => e.AddressLine2)
+                .HasMaxLength(50)
+                .HasColumnName("address2");
+
+            entity.Property(e => e.District)
+                .IsRequired()
+                .HasMaxLength(20)
+                .HasColumnName("district");
+
+            entity.Property(e => e.CityId)
+                .IsRequired()
+                .HasColumnName("city_id");
+
+            entity.Property(e => e.PostalCode)
+                .HasMaxLength(10)
+                .HasColumnName("postal_code");
+
+            entity.Property(e => e.Phone)
+                .IsRequired()
+                .HasMaxLength(20)
+                .HasColumnName("phone");
+
+            entity.Property(e => e.Location)
+                .IsRequired()
+                .HasColumnName("location");
+
+           entity
+            .Ignore(a => a.Location);
         });
 
         modelBuilder.Entity<City>(entity =>
