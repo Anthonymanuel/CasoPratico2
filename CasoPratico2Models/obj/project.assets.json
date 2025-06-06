@@ -47,11 +47,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CasoPratico2Models\\CasoPratico2Models.csproj",
+      "projectUniqueName": "F:\\Caso Pratico\\CasoPratico2Models\\CasoPratico2Models.csproj",
       "projectName": "CasoPratico2Models",
-      "projectPath": "F:\\CasoPratico2Models\\CasoPratico2Models.csproj",
+      "projectPath": "F:\\Caso Pratico\\CasoPratico2Models\\CasoPratico2Models.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\CasoPratico2Models\\obj\\",
+      "outputPath": "F:\\Caso Pratico\\CasoPratico2Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

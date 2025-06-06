@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/s/Oe+SSmEo=",
+  "dgSpecHash": "eNH5XEaLvYc=",
   "success": true,
-  "projectFilePath": "F:\\CasoPratico2Models\\CasoPratico2Models.csproj",
+  "projectFilePath": "F:\\Caso Pratico\\CasoPratico2Models\\CasoPratico2Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\nettopologysuite\\2.6.0\\nettopologysuite.2.6.0.nupkg.sha512"
   ],

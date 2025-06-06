@@ -10,3 +10,16 @@ F:\CasoPratico2Models\obj\Debug\net7.0\refint\CasoPratico2Models.dll
 F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.pdb
 F:\CasoPratico2Models\obj\Debug\net7.0\ref\CasoPratico2Models.dll
 F:\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.csproj.AssemblyReference.cache
+F:\Caso Pratico\CasoPratico2Models\bin\Debug\net7.0\CasoPratico2Models.deps.json
+F:\Caso Pratico\CasoPratico2Models\bin\Debug\net7.0\CasoPratico2Models.dll
+F:\Caso Pratico\CasoPratico2Models\bin\Debug\net7.0\CasoPratico2Models.pdb
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.csproj.AssemblyReference.cache
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.AssemblyInfoInputs.cache
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.AssemblyInfo.cs
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.csproj.CoreCompileInputs.cache
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.sourcelink.json
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.dll
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\refint\CasoPratico2Models.dll
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\CasoPratico2Models.pdb
+F:\Caso Pratico\CasoPratico2Models\obj\Debug\net7.0\ref\CasoPratico2Models.dll
