@@ -62,12 +62,12 @@ public class FilmTextController : ControllerBase
         {
             var fullError = ex.InnerException?.ToString() ?? ex.ToString();
 
-            _logger.LogError(fullError); // log completo en consola o archivo
+            _logger.LogError(fullError); 
 
             return StatusCode(StatusCodes.Status500InternalServerError, new
             {
                 statusCode = 500,
-                message = fullError // <- Esto muestra el mensaje completo del error
+                message = fullError
             });
         }
     }

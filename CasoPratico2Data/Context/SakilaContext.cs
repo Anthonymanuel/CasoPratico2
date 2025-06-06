@@ -20,6 +20,7 @@ public class SakilaContext : DbContext
     public DbSet<City> City { get; set; }
     public DbSet<Country> Country { get; set; }
     public DbSet<Customer> Customer { get; set; }
+    public DbSet<Film> Film { get; set; }
     public DbSet<FilmText> FilmText { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Category> Category { get; set; }
@@ -165,6 +166,58 @@ public class SakilaContext : DbContext
             entity.Property(e => e.Active)
                   .HasColumnName("active")
                   .HasDefaultValue(true);
+        });
+
+        modelBuilder.Entity<Film>(entity =>
+        {
+            entity.ToTable("film");
+
+            entity.HasKey(f => f.FilmId);
+
+            entity.Property(f => f.FilmId)
+                .HasColumnName("film_id");
+
+            entity.Property(f => f.Title)
+                .IsRequired()
+                .HasMaxLength(128)
+                .HasColumnName("title");
+
+            entity.Property(f => f.Description)
+                .HasColumnType("text")
+                .HasColumnName("description");
+
+            entity.Property(f => f.ReleaseYear)
+                .HasColumnName("release_year");
+
+            entity.Property(f => f.LanguageId)
+                .IsRequired()
+                .HasColumnName("language_id");
+
+            entity.Property(f => f.OriginalLanguageId)
+                .HasColumnName("original_language_id");
+
+            entity.Property(f => f.RentalDuration)
+                .IsRequired()
+                .HasColumnName("rental_duration");
+
+            entity.Property(f => f.RentalRate)
+                .HasColumnType("decimal(4,2)")
+                .HasColumnName("rental_rate");
+
+            entity.Property(f => f.Length)
+                .HasColumnName("length");
+
+            entity.Property(f => f.ReplacementCost)
+                .IsRequired()
+                .HasColumnType("decimal(5,2)")
+                .HasColumnName("replacement_cost");
+
+            entity.Property(f => f.Rating)
+                .HasMaxLength(10)
+                .HasColumnName("rating");
+
+            entity.Property(f => f.SpecialFeatures)
+                .HasColumnName("special_features");
         });
 
         modelBuilder.Entity<FilmText>(entity =>
