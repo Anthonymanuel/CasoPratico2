@@ -598,6 +598,194 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmActorController",
+    "Method": "AddFilmActor",
+    "RelativePath": "api/FilmActor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmActor",
+        "Type": "CasoPratico2Models.Models.FilmActor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmActorController",
+    "Method": "UpdateFilmActor",
+    "RelativePath": "api/FilmActor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmActorToUpdate",
+        "Type": "CasoPratico2Models.Models.FilmActor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmActorController",
+    "Method": "GetFilmActors",
+    "RelativePath": "api/FilmActor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CasoPratico2Models.Models.FilmActor, CasoPratico2Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmActorController",
+    "Method": "DeleteFilmActor",
+    "RelativePath": "api/FilmActor/{filmId}/{actorId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "actorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmActorController",
+    "Method": "GetFilmActorById",
+    "RelativePath": "api/FilmActor/{filmId}/{actorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "actorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmCategoryController",
+    "Method": "AddFilmCategory",
+    "RelativePath": "api/FilmCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmCategory",
+        "Type": "CasoPratico2Models.Models.FilmCategory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmCategoryController",
+    "Method": "UpdateFilmCategory",
+    "RelativePath": "api/FilmCategory",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmCategoryToUpdate",
+        "Type": "CasoPratico2Models.Models.FilmCategory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmCategoryController",
+    "Method": "GetFilmCategories",
+    "RelativePath": "api/FilmCategory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CasoPratico2Models.Models.FilmCategory, CasoPratico2Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmCategoryController",
+    "Method": "DeleteFilmCategory",
+    "RelativePath": "api/FilmCategory/{filmId}/{categoryId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CasoPratico2Api.Controllers.FilmCategoryController",
+    "Method": "GetFilmCategoryById",
+    "RelativePath": "api/FilmCategory/{filmId}/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CasoPratico2Api.Controllers.FilmTextController",
     "Method": "GetFilmTexts",
     "RelativePath": "api/FilmText",

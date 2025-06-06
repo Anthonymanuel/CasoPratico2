@@ -21,6 +21,8 @@ public class SakilaContext : DbContext
     public DbSet<Country> Country { get; set; }
     public DbSet<Customer> Customer { get; set; }
     public DbSet<Film> Film { get; set; }
+    public DbSet<FilmActor> FilmActor { get; set; }
+    public DbSet<FilmCategory> FilmCategory { get; set; }
     public DbSet<FilmText> FilmText { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Category> Category { get; set; }
@@ -218,6 +220,30 @@ public class SakilaContext : DbContext
 
             entity.Property(f => f.SpecialFeatures)
                 .HasColumnName("special_features");
+        });
+
+        modelBuilder.Entity<FilmActor>(entity =>
+        {
+            entity.ToTable("film_actor");
+            entity.HasKey(e => new { e.ActorId, e.FilmId });
+
+            entity.Property(e => e.ActorId)
+                .HasColumnName("actor_id");
+
+            entity.Property(e => e.FilmId)
+                .HasColumnName("film_id");
+        });
+
+        modelBuilder.Entity<FilmCategory>(entity =>
+        {
+            entity.ToTable("film_category");
+            entity.HasKey(e => new { e.FilmId, e.CategoryId });
+
+            entity.Property(e => e.FilmId)
+                .HasColumnName("film_id");
+
+            entity.Property(e => e.CategoryId)
+                .HasColumnName("category_id");
         });
 
         modelBuilder.Entity<FilmText>(entity =>
