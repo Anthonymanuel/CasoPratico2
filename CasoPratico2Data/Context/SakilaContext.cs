@@ -19,6 +19,7 @@ public class SakilaContext : DbContext
     public DbSet<Address> Address { get; set; }
     public DbSet<City> City { get; set; }
     public DbSet<Country> Country { get; set; }
+    public DbSet<Customer> Customer { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Category> Category { get; set; }
 
@@ -114,7 +115,6 @@ public class SakilaContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_City_Country");
         });
-
         modelBuilder.Entity<Country>(entity =>
         {
             entity.HasKey(e => e.CountryId);
@@ -129,6 +129,39 @@ public class SakilaContext : DbContext
                 .HasColumnName("country")
                 .HasMaxLength(50)
                 .IsRequired();
+        });
+
+        modelBuilder.Entity<Customer>(entity =>
+        {
+            entity.ToTable("customer");
+
+            entity.HasKey(e => e.CustomerId);
+            entity.Property(e => e.CustomerId)
+                  .HasColumnName("customer_id");
+
+            entity.Property(e => e.StoreId)
+                  .HasColumnName("store_id");
+
+            entity.Property(e => e.FirstName)
+                  .IsRequired()
+                  .HasMaxLength(45)
+                  .HasColumnName("first_name");
+
+            entity.Property(e => e.LastName)
+                  .IsRequired()
+                  .HasMaxLength(45)
+                  .HasColumnName("last_name");
+
+            entity.Property(e => e.Email)
+                  .HasMaxLength(50)
+                  .HasColumnName("email");
+
+            entity.Property(e => e.AddressId)
+                  .HasColumnName("address_id");
+
+            entity.Property(e => e.Active)
+                  .HasColumnName("active")
+                  .HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Language>(entity =>

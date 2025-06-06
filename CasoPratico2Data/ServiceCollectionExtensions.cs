@@ -14,6 +14,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IAddressRepository, AddressRepository>();
         services.AddTransient<ICityRepository, CityRepository>();
         services.AddTransient<ICountryRepository, CountryRepository>();
+        services.AddTransient<ICustomerRepository, CustomerRepository>();
         services.AddTransient<ILanguageRepository, LanguageRepository>();
         services.AddTransient<ICategoryRepository, CategoryRepository>();
 
