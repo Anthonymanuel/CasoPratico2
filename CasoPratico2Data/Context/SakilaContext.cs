@@ -20,6 +20,7 @@ public class SakilaContext : DbContext
     public DbSet<City> City { get; set; }
     public DbSet<Country> Country { get; set; }
     public DbSet<Customer> Customer { get; set; }
+    public DbSet<FilmText> FilmText { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Category> Category { get; set; }
 
@@ -162,6 +163,25 @@ public class SakilaContext : DbContext
             entity.Property(e => e.Active)
                   .HasColumnName("active")
                   .HasDefaultValue(true);
+        });
+
+        modelBuilder.Entity<FilmText>(entity =>
+        {
+            entity.ToTable("film_text");
+
+            entity.HasKey(e => e.FilmId);
+
+            entity.Property(e => e.FilmId)
+                .HasColumnName("film_id");
+
+            entity.Property(e => e.Title)
+                .HasColumnName("title")
+                .HasMaxLength(255)
+                .IsRequired();
+
+            entity.Property(e => e.Description)
+                .HasColumnName("description")
+                .HasColumnType("text");
         });
 
         modelBuilder.Entity<Language>(entity =>
