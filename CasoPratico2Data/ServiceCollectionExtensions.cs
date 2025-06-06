@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IFilmTextRepository, FilmTextRepository>();
         services.AddTransient<ILanguageRepository, LanguageRepository>();
         services.AddTransient<ICategoryRepository, CategoryRepository>();
-
+        services.AddTransient<IStaffRepository, StaffRepository>();
         return services;
     }
 }

@@ -23,6 +23,8 @@ public class SakilaContext : DbContext
     public DbSet<FilmText> FilmText { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Category> Category { get; set; }
+    public DbSet<Staff> Staff { get; set; }
+       
 
     override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -216,6 +218,62 @@ public class SakilaContext : DbContext
                 .HasMaxLength(25)
                 .IsRequired();
    
+        });
+
+        modelBuilder.Entity<Staff>(entity =>
+        {
+            entity.ToTable("staff");
+
+            entity.HasKey(e => e.StaffId);
+
+            entity.Property(e => e.StaffId).HasColumnName("staff_id");
+
+            entity.Property(e => e.FirstName)
+                .IsRequired()
+                .HasMaxLength(45)
+                .HasColumnName("first_name");
+
+            entity.Property(e => e.LastName)
+                .IsRequired()
+                .HasMaxLength(45)
+                .HasColumnName("last_name");
+
+            entity.Property(e => e.AddressId)
+                .IsRequired()
+                .HasColumnName("address_id");
+
+            entity.Property(e => e.Picture)
+                .HasColumnType("blob")
+                .HasColumnName("picture");
+
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .HasColumnName("email");
+
+            entity.Property(e => e.StoreId)
+                .IsRequired()
+                .HasColumnName("store_id");
+
+            entity.Property(e => e.Active)
+                .IsRequired()
+                .HasColumnName("active");
+
+            entity.Property(e => e.Username)
+                .IsRequired()
+                .HasMaxLength(16)
+                .HasColumnName("username");
+
+            entity.Property(e => e.Password)
+                .HasColumnType("varchar(40)")
+                .HasColumnName("password");
+   
+            entity.HasOne<Address>() 
+                .WithMany()
+                .HasForeignKey(e => e.AddressId);
+
+            entity.HasOne<Store>() 
+                .WithMany()
+                .HasForeignKey(e => e.StoreId);
         });
 
     }
