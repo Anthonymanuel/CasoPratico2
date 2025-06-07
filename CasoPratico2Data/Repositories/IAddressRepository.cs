@@ -1,13 +1,12 @@
 ﻿using CasoPratico2Models.Models;
 
-namespace CasoPratico2Data.Repositories
+namespace CasoPratico2Data.Repositories;
+
+public interface IAddressRepository
 {
-    public interface IAddressRepository
-    {
-        Task<Address> CreateAddressAsync(Address address);
-        Task DeleteAddressAsync(int id);
-        Task<Address?> GetAddressByIdAsync(int id);
-        Task<IEnumerable<Address>> GetAddressesAsync();
-        Task UpdateAddressAsync(Address address);
-    }
+    Task<Address> CreateAddressAsync(Address address);
+    Task DeleteAddressAsync(int id);
+    Task<Address?> GetAddressByIdAsync(int id);
+    Task<IEnumerable<Address>> GetAddressesAsync();
+    Task UpdateAddressAsync(Address address);
 }

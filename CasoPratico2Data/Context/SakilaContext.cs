@@ -27,6 +27,7 @@ public class SakilaContext : DbContext
     public DbSet<Inventory> Inventory { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Payment> Payment { get; set; }
+    public DbSet<Rental> Rental { get; set; }
     public DbSet<Category> Category { get; set; }
     public DbSet<Staff> Staff { get; set; }
        
@@ -347,6 +348,36 @@ public class SakilaContext : DbContext
                   .WithMany()
                   .HasForeignKey(e => e.RentalId)
                   .OnDelete(DeleteBehavior.SetNull);
+        });
+
+        modelBuilder.Entity<Rental>(entity =>
+        {
+            entity.ToTable("rental");
+
+            entity.HasKey(e => e.RentalId);
+
+            entity.Property(e => e.RentalId)
+                .HasColumnName("rental_id");
+
+            entity.Property(e => e.RentalDate)
+                .IsRequired()
+                .HasColumnName("rental_date");
+
+            entity.Property(e => e.InventoryId)
+                .IsRequired()
+                .HasColumnName("inventory_id");
+
+            entity.Property(e => e.CustomerId)
+                .IsRequired()
+                .HasColumnName("customer_id");
+
+            entity.Property(e => e.ReturnDate)
+                .HasColumnName("return_date");
+
+            entity.Property(e => e.StaffId)
+                .IsRequired()
+                .HasColumnName("staff_id");
+
         });
 
         modelBuilder.Entity<Category>(entity =>
