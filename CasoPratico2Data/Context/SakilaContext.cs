@@ -30,7 +30,8 @@ public class SakilaContext : DbContext
     public DbSet<Rental> Rental { get; set; }
     public DbSet<Category> Category { get; set; }
     public DbSet<Staff> Staff { get; set; }
-       
+    public DbSet<Store> Store { get; set; }
+
 
     override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -453,5 +454,32 @@ public class SakilaContext : DbContext
                 .HasForeignKey(e => e.StoreId);
         });
 
+        modelBuilder.Entity<Store>(entity =>
+        {
+            entity.ToTable("store");
+
+            entity.HasKey(e => e.StoreId);
+
+            entity.Property(e => e.StoreId)
+                  .HasColumnName("store_id");
+
+            entity.Property(e => e.ManagerStaffId)
+                  .HasColumnName("manager_staff_id")
+                  .IsRequired();
+
+            entity.Property(e => e.AddressId)
+                  .HasColumnName("address_id")
+                  .IsRequired();
+
+
+            entity.HasIndex(e => e.ManagerStaffId)
+                  .IsUnique()
+                  .HasDatabaseName("idx_unique_manager");
+
+            entity.HasIndex(e => e.AddressId)
+                  .HasDatabaseName("idx_fk_address_id");
+
+
+        });
     }
 }

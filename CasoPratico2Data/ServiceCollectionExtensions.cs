@@ -25,6 +25,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IRentalRepository, RentalRepository>();
         services.AddTransient<ICategoryRepository, CategoryRepository>();
         services.AddTransient<IStaffRepository, StaffRepository>();
+        services.AddTransient<IStoreRepository, StoreRepository>();
         return services;
     }
 }
