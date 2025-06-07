@@ -26,6 +26,7 @@ public class SakilaContext : DbContext
     public DbSet<FilmText> FilmText { get; set; }
     public DbSet<Inventory> Inventory { get; set; }
     public DbSet<Language> Language { get; set; }
+    public DbSet<Payment> Payment { get; set; }
     public DbSet<Category> Category { get; set; }
     public DbSet<Staff> Staff { get; set; }
        
@@ -300,6 +301,52 @@ public class SakilaContext : DbContext
                 .HasMaxLength(20)
                 .IsRequired();
 
+        });
+
+        modelBuilder.Entity<Payment>(entity =>
+        {
+            entity.ToTable("payment"); 
+
+            entity.HasKey(e => e.PaymentId)
+                  .HasName("pk_payment_id");
+
+            entity.Property(e => e.PaymentId)
+                  .HasColumnName("payment_id");
+
+            entity.Property(e => e.CustomerId)
+                  .IsRequired()
+                  .HasColumnName("customer_id");
+
+            entity.Property(e => e.StaffId)
+                  .IsRequired()
+                  .HasColumnName("staff_id");
+
+            entity.Property(e => e.RentalId)
+                  .HasColumnName("rental_id");
+
+            entity.Property(e => e.Amount)
+                  .IsRequired()
+                  .HasColumnName("amount")
+                  .HasColumnType("decimal(5,2)");
+
+            entity.Property(e => e.PaymentDate)
+                  .IsRequired()
+                  .HasColumnName("payment_date");
+
+            entity.HasOne<Customer>()
+                  .WithMany()
+                  .HasForeignKey(e => e.CustomerId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            entity.HasOne<Staff>()
+                  .WithMany()
+                  .HasForeignKey(e => e.StaffId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            entity.HasOne<Rental>()
+                  .WithMany()
+                  .HasForeignKey(e => e.RentalId)
+                  .OnDelete(DeleteBehavior.SetNull);
         });
 
         modelBuilder.Entity<Category>(entity =>
