@@ -24,6 +24,7 @@ public class SakilaContext : DbContext
     public DbSet<FilmActor> FilmActor { get; set; }
     public DbSet<FilmCategory> FilmCategory { get; set; }
     public DbSet<FilmText> FilmText { get; set; }
+    public DbSet<Inventory> Inventory { get; set; }
     public DbSet<Language> Language { get; set; }
     public DbSet<Category> Category { get; set; }
     public DbSet<Staff> Staff { get; set; }
@@ -263,6 +264,25 @@ public class SakilaContext : DbContext
             entity.Property(e => e.Description)
                 .HasColumnName("description")
                 .HasColumnType("text");
+        });
+
+        modelBuilder.Entity<Inventory>(entity =>
+        {
+            entity.ToTable("inventory");
+
+            entity.HasKey(e => e.InventoryId)
+                  .HasName("PRIMARY");
+
+            entity.Property(e => e.InventoryId)
+                  .HasColumnName("inventory_id");
+
+            entity.Property(e => e.FilmId)
+                  .IsRequired()
+                  .HasColumnName("film_id");
+
+            entity.Property(e => e.StoreId)
+                  .IsRequired()
+                  .HasColumnName("store_id");
         });
 
         modelBuilder.Entity<Language>(entity =>

@@ -7,5 +7,6 @@ public class ClaseBase
 {
     [Column("last_update")]
     [JsonPropertyName("last_update")]
+    
     public DateTime LatUpdate { get; set; } = DateTime.UtcNow;
 }

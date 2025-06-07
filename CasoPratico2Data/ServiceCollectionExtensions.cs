@@ -19,6 +19,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IFilmActorRepository, FilmActorRepository>();
         services.AddTransient<IFilmCategoryRepository, FilmCategoryRepository>();
         services.AddTransient<IFilmTextRepository, FilmTextRepository>();
+        services.AddTransient<IInventoryRepository, InventoryRepository>();
         services.AddTransient<ILanguageRepository, LanguageRepository>();
         services.AddTransient<ICategoryRepository, CategoryRepository>();
         services.AddTransient<IStaffRepository, StaffRepository>();

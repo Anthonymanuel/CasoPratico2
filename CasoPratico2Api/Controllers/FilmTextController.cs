@@ -17,39 +17,6 @@ public class FilmTextController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<FilmText>>> GetFilmTexts()
-    {
-        try
-        {
-            var films = await _filmTextRepository.GetFilmTextsAsync();
-            return Ok(films);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex.Message);
-            return StatusCode(500, new { message = ex.Message });
-        }
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<FilmText>> GetFilmTextById(int id)
-    {
-        try
-        {
-            var film = await _filmTextRepository.GetFilmTextByIdAsync(id);
-            if (film == null)
-                return NotFound(new { message = "Record not found" });
-
-            return Ok(film);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex.Message);
-            return StatusCode(500, new { message = ex.Message });
-        }
-    }
-
     [HttpPost]
     public async Task<ActionResult> AddFilmText([FromBody] FilmText filmText)
     {
@@ -62,7 +29,7 @@ public class FilmTextController : ControllerBase
         {
             var fullError = ex.InnerException?.ToString() ?? ex.ToString();
 
-            _logger.LogError(fullError); 
+            _logger.LogError(fullError);
 
             return StatusCode(StatusCodes.Status500InternalServerError, new
             {
@@ -94,6 +61,22 @@ public class FilmTextController : ControllerBase
         }
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<FilmText>>> GetFilmTexts()
+    {
+        try
+        {
+            var films = await _filmTextRepository.GetFilmTextsAsync();
+            return Ok(films);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message);
+            return StatusCode(500, new { message = ex.Message });
+        }
+    }
+
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteFilmText(int id)
     {
@@ -112,4 +95,23 @@ public class FilmTextController : ControllerBase
             return StatusCode(500, new { message = ex.Message });
         }
     }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<FilmText>> GetFilmTextById(int id)
+    {
+        try
+        {
+            var film = await _filmTextRepository.GetFilmTextByIdAsync(id);
+            if (film == null)
+                return NotFound(new { message = "Record not found" });
+
+            return Ok(film);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message);
+            return StatusCode(500, new { message = ex.Message });
+        }
+    }
+
 }

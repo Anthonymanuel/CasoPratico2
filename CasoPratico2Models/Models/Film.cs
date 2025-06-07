@@ -17,4 +17,5 @@ public class Film : ClaseBase
     public decimal ReplacementCost { get; set; } = 19.99m;
     public string? Rating { get; set; } = "G";
     public string? SpecialFeatures { get; set; }
+    public Inventory Inventory { get; set; }
 }
